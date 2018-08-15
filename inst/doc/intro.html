@@ -12,7 +12,7 @@
 
 <meta name="author" content="Hong Zhang" />
 
-<meta name="date" content="2018-05-01" />
+<meta name="date" content="2018-08-15" />
 
 <title>Introduction to StatComp</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Introduction to StatComp</h1>
 <h4 class="author"><em>Hong Zhang</em></h4>
-<h4 class="date"><em>2018-05-01</em></h4>
+<h4 class="date"><em>2018-08-15</em></h4>
 
 
 
@@ -129,15 +129,15 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">su
 <tbody>
 <tr class="odd">
 <td align="left">vR</td>
-<td align="right">473.9155</td>
-<td align="right">496.0045</td>
-<td align="right">542.861</td>
+<td align="right">107.5365</td>
+<td align="right">181.5155</td>
+<td align="right">192.308</td>
 </tr>
 <tr class="even">
 <td align="left">vC</td>
-<td align="right">217.0995</td>
-<td align="right">220.2240</td>
-<td align="right">230.264</td>
+<td align="right">15.6865</td>
+<td align="right">19.8270</td>
+<td align="right">20.980</td>
 </tr>
 </tbody>
 </table>
@@ -174,8 +174,8 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">su
 }</code></pre></div>
 <p>The R code for benchmarking <em>gibbsR</em> and <em>gibbsC</em> is as follows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tm2 &lt;-<span class="st"> </span><span class="kw">microbenchmark</span>(
-  <span class="dt">vR =</span> <span class="kw">vaccR</span>(age,female,ily),
-  <span class="dt">vC =</span> <span class="kw">vaccC</span>(age,female,ily)
+  <span class="dt">vR =</span> <span class="kw">gibbsR</span>(<span class="fl">1e4</span>, <span class="dv">10</span>),
+  <span class="dt">vC =</span> <span class="kw">gibbsC</span>(<span class="fl">1e4</span>, <span class="dv">10</span>)
 )
 knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">summary</span>(tm2)[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)])</code></pre></div>
 <table>
@@ -190,15 +190,15 @@ knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">su
 <tbody>
 <tr class="odd">
 <td align="left">vR</td>
-<td align="right">479.270</td>
-<td align="right">498.236</td>
-<td align="right">544.1995</td>
+<td align="right">625.99017</td>
+<td align="right">651.74722</td>
+<td align="right">679.00894</td>
 </tr>
 <tr class="even">
 <td align="left">vC</td>
-<td align="right">215.538</td>
-<td align="right">224.909</td>
-<td align="right">242.7595</td>
+<td align="right">26.15472</td>
+<td align="right">26.88458</td>
+<td align="right">28.95449</td>
 </tr>
 </tbody>
 </table>

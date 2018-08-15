@@ -68,8 +68,8 @@ knitr::kable(summary(tm2)[,c(1,3,5,6)])
 
 ## ----eval=TRUE-----------------------------------------------------------
 tm2 <- microbenchmark(
-  vR = vaccR(age,female,ily),
-  vC = vaccC(age,female,ily)
+  vR = gibbsR(1e4, 10),
+  vC = gibbsC(1e4, 10)
 )
 knitr::kable(summary(tm2)[,c(1,3,5,6)])
 
